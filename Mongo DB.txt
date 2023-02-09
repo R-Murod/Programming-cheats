@@ -1,0 +1,31 @@
+show dbs
+show collections
+use sample_....
+find()
+findOne()
+deleteOne()
+deleteMany()
+pretty() - чтобы код стоял красиво
+count()
+updateOne()
+updateMany()
+{$inc} - добавляет  - we use it in update
+{$set} - новое значение - we use it in update
+{$pop} - добавляет в массив новый элемент - we use it in update
+
+################# Операторы сравнения
+$eq - EQual to (=)
+$ne - Not Equal to (=)
+$gt - Greater Than (>)
+$lt - Less Than (<)
+$gte - Greater Than or Equal to (>=)
+$lte - Less Than or Equal to (<=)
+
+################# Логические операторы
+$and - возвращает все документы которые соответствует к  условию
+$or - возвращает хотя бы один из документов соответствует
+$nor - возвращает все док. которые НЕ соот. обоим условиям
+$not - отменяет требование запроса и воз. все док. НЕ соот. запросу
+
+
+

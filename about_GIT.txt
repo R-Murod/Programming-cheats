@@ -1,0 +1,47 @@
+Через Командную строку:
+1) Первый коммит и проверка состояния
+type filename.любой - будет открыть текст текущего файла
+rmdir /s .git - если случайно создал git init
+echo some text if you prefer > filename.txt - создаёт файл с текстом
+echo some text if you prefer >> filename.txt - добавляет текст в этот файл
+git add text.txt - добав. коммит в кандидат
+gitk - через это можем посмотреть все наши коммиты
+git commit -m "first or second etc" - через коммиты добавляем, изменяем тексты
+git add text.txt - если хотим изменить текст, потом git commit -m "first or second etc"
+git status - git выводит нам текущее состояние git репозиторий
+
+2)Индексация файлов
+git add * - добавляет все незнакомые файлы
+git add . - тоже добавляет все незнакомые файлы, советую исп. git add *
+index.txt to --> index.html - тогда лучше исп. git add index.html
+потом исп. git commit -m "some text" - чтобы комметировать
+
+3)История коммитов
+git log - что бы посмотреть историю коммитов
+git log --pretty=oneline - выводить коммиты на одну линию, pretty - это выводить код красивым
+git log --pretty=oneline --max-count=3 - выводим последнее три коммита
+git log --pretty=oneline --all - если у вас много коммитов, тогда вам придется написать эту код
+git log --pretty=format:"%h - %s : %ad [ %an]" - с этого мы получим данные, пример : 97081a7 - New file : Fri Sep 23 17:43:52 2022 +0600 [ R-Murod] - один из них
+git log --pretty=format:"%h - %s : %ad [ %an]" --date=short - нам выводить красивый формат, пример : 97081a7 - New file : 2022-09-23 [ R-Murod]
+
+4)Git checkout. Назад в будущее
+git checkout some id - с этого мы заходим на этот коммита
+git checkout master - как я понял возвращается все на свое место
+
+5)Отмена индексированных файлов
+git reset HEAD filename.txt - возвращает в начальную состояние, и потом наш git не знает о нем нечего
+git checkout filename.txt - возвращает полн. то что было в нашем репизоторий
+
+6) Отмена коммита
+вместо git revert HEAD можно исп. это - git revert HEAD --no-edit - отменяет то есть возвр. все как было
+
+7) Git ветки и их применение (branch)
+git branch - можно увидеть все активные ветки(должно стоить master)
+git checkout -b newbranch - через это мы поменяем наш ветку на newbranch, newbranch унаследует master
+git checkout somename - что бы подклю. к этой ветке
+
+8) Слияния веток
+git merge somename - из веток somename копирует все файлы на текущую ветку
+
+9) Git clone
+git clone ссылка - что бы получить у других готовый репозиторию

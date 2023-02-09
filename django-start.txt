@@ -1,0 +1,66 @@
+1)
+Rabochiy stoldan
+django-admin startproject magazine - yangi magazine degan papka
+magazine degan papkaga kirip olamiz
+django-admin startapp main - main papka ochiladi
+pipenv - tekshirp kuramiz, bulsa davom etamiz
+pipenv --python 3 - 3 version ni shu papkaga ochadi
+pipenv shell - yozamiz
+runserver qilsak ishlamaydi, chunki django qilinmagan 
+pipenv install django - django uztanovka qilamiz
+potom - python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser - adminka ochish uchun
+
+2)
+Modellar yaratamiz
+
+3)
+settingsni tugirlash kk
+INSTALLED_APPS - degan joyga 'main' deganni qushvorsh kk
+
+pipenv install pillow - ustanovga qilamiz
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'                         ------ shu ni BASE_DIR dan boshlaymiz
+
+media degan papka sozdat etamiz - uzimizni projectimizga
+
+TEMPLATES = - degan joyga, 'DIRS': [] - shuni ichiga 'templates' dep yozip ketamiz
+
+templates degan papka sozdat etamiz - uzimizni projectimizga
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]                                           ---------- shu ni STATIC_URL dan boshlaymiz
+
+4)
+urlsni tugirlash kk
+
+url(r'^media/(?P<path>.*)$', serve, {
+        'document_root': settings.MEDIA_ROOT
+    })                             ------- shuni urlpatterns ni eng tegiga yozip quyamiz
+
+and bitta ikkita narsalarni import qilamiz
+
+from os import path
+
+from django.contrib import admin
+from django.template.defaulttags import url
+from django.urls import path
+from django.urls import re_path as url
+from django.views.static import serve
+from main.views import *
+
+from betta settingsni papkasini nomi import settings
+
+________________________________________________________
+
+ По умолчанию LANGUAGE_CODE = 'en-us' --> что бы сменить на другой язык например на русский язык LANGUAGE_CODE = 'ru'
